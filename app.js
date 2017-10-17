@@ -263,6 +263,7 @@ MockREST.prototype.uuid =function() {
  * Starts the server
  */
 MockREST.prototype.startServer = function() {
+    console.info(`Starting server for (${Object.keys(routes).join(', ')}) on port ${port}`);
     server = http.createServer(this.createResponse.bind(this)).listen(port);
 };
 
