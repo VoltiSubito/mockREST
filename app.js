@@ -163,7 +163,7 @@ MockREST.prototype.getData = function(path, method, req) {
         response,
         returnObj = routes;
 
-    pathChunks.shift();
+    pathChunks = pathChunks.filter((chunk) => !!chunk);
 
     if (pathChunks.length < 1) {
         return 'Please specify a valid RESTful request. Examples\r\n' +

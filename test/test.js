@@ -15,6 +15,11 @@ describe('Base connection', function() {
             .expect(200, done)
     });
 
+    it('responds with a 200 if the existing route has a trailing slash', function(done) {
+        api.get('/products/')
+            .expect(200, done)
+    });
+
     it('responds correctly when getting an item', function(done) {
        api.get('/products/1')
            .expect(200, '{"id":1,"obj":"carrot","packages":{"single":{"id":9,"price":0.9},"kilo":{"id":10,"price":0.5}}}', done);
